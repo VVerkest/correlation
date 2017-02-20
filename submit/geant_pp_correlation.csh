@@ -23,7 +23,7 @@ make bin/geant_pp_correlation || exit
 
 set analysis = $1
 set command = './bin/geant_pp_correlation'
-set base = Data/AddedGeantPythia/picoDst_
+set base = Data/AddedGeantPythia/
 set mbData = /Data/AuAuMB_0_20/picoMB_0_20.root
 
 if ( $# != "7" && !( $2 == 'default' ) ) then
@@ -55,8 +55,8 @@ if ( $2 == 'default' ) then
 set useEfficiency = 'false'
 set triggerCoincidence = 'false'
 if ( $analysis == 'ppdijet' ) then
-set subLeadPtMin = 7.0
-set leadPtMin = 14.0
+set subLeadPtMin = 10.0
+set leadPtMin = 20.0
 set jetPtMax = 100.0
 else if ( $analysis == 'ppjet' ) then
 set subLeadPtMin = 0.0
@@ -85,7 +85,7 @@ endif
 foreach input ( ${base}* )
 
 # Create the output file base name
-set OutBase = `basename $input | sed 's/.list//g'`
+set OutBase = `basename $input | sed 's/.root//g'`
 
 # Make the output names and path
 set outLocation = "out/${outFile}/"
