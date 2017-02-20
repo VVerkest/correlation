@@ -23,7 +23,7 @@ make bin/star_pp_correlation || exit
 
 set analysis = $1
 set command = './bin/star_pp_correlation'
-set base = Data/ppHT/picoDst_
+set base = Data/ppHT/
 set mbData = /Data/AuAuMB_0_20/picoMB_0_20.root
 
 if ( $# != "7" && !( $2 == 'default' ) ) then
@@ -85,7 +85,7 @@ endif
 foreach input ( ${base}* )
 
 # Create the output file base name
-set OutBase = `basename $input | sed 's/.list//g'`
+set OutBase = `basename $input | sed 's/.root//g'`
 
 # Make the output names and path
 set outLocation = "out/${outFile}/"
