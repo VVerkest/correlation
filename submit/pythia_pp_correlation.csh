@@ -89,8 +89,8 @@ set OutBase = `basename $input | sed 's/.root//g'`
 
 # Make the output names and path
 set outLocation = "out/${outFile}/"
-set outName = correlations/corr_${OutBase}
-set outNameTree = tree/tree_${OutBase}
+set outName = correlations/corr_${OutBase}.root
+set outNameTree = tree/tree_${OutBase}.root
 
 # Input files
 set Files = ${input}
